@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos DOM</title>
+  <style>
+    div#area {
+      font: normal 15pt arial;
+      background: rgb(42, 139, 42);
+      color: white;
+      width: 200px;
+      height: 200px;
+      line-height: 200px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="area">
+    Interaja...
+  </div>
+
+  <script>
+    //váriavel que puxa a div com id area
+    const area = document.getElementById('area')
+
+    //eventos
+    area.addEventListener('click', clicar)
+    area.addEventListener('mouseenter', entrar)
+    area.addEventListener('mouseout', sair)
+
+    function clicar() {
+      // com innerText só muda o texto, com innerHTML consegue colocar tags html
+      area.innerText = 'Clicou!'
+      area.style.background = 'red'
+    }
+    function entrar() {
+      area.innerText = "Entrou!"
+    }
+    function sair() {
+      area.innerText = 'Saiu!'
+      area.style.background = 'green'
+    }
+
+  </script>
+</body>
+
+</html>
